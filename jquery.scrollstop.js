@@ -17,7 +17,7 @@
                         clearTimeout(timer);
                     } else {
                         evt.type = 'scrollstart';
-                        jQuery.event.handle.apply(_self, _args);
+                        jQuery.event.simulate( evt.type, _self, evt, true );
                     }
  
                     timer = setTimeout( function(){
@@ -52,7 +52,7 @@
  
                         timer = null;
                         evt.type = 'scrollstop';
-                        jQuery.event.handle.apply(_self, _args);
+                        jQuery.event.simulate( evt.type, _self, evt, true ); 
  
                     }, special.scrollstop.latency);
  
